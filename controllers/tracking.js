@@ -18,6 +18,11 @@ export const createTrackingEvent = async (req, res) => {
       });
     }
 
+    
+
+
+
+
     // Get IP Address
     const ipAddress =
       req.headers["x-forwarded-for"] ||
