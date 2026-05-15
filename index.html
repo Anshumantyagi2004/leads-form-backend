@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promozione Branding API Documentation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for better readability and structure */
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #f7f9fb;
+      color: #1f2937;
+    }
+
+    .code-block {
+      background-color: #1f2937;
+      color: #d1d5db;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-family: "Consolas", "Monaco", monospace;
+    }
+
+    .required-tag {
+      background-color: #fef2f2;
+      /* Light Red/Pink */
+      color: #dc2626;
+      /* Dark Red */
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+    }
+
+    .optional-tag {
+      background-color: #eff6ff;
+      /* Light Blue */
+      color: #2563eb;
+      /* Dark Blue */
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body class="p-4 sm:p-8">
+  <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl p-6 md:p-10">
+    <header class="mb-8 border-b pb-4">
+      <h1 class="text-3xl font-bold text-gray-800 mb-1">
+        Promozione Branding API
+      </h1>
+      <p class="text-lg text-gray-500">
+        Documentation for Form Submission Endpoint
+      </p>
+    </header>
+
+    <!-- API Endpoint Section -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+        Endpoint Details
+      </h2>
+
+      <div class="space-y-4">
+        <div class="p-4 bg-indigo-50 rounded-lg shadow-md">
+          <p class="text-sm font-medium text-gray-600">Base URL</p>
+          <code class="text-lg font-mono text-indigo-700 break-all">http://31.97.207.196:5000</code>
+        </div>
+
+        <div class="p-4 bg-green-50 rounded-lg shadow-md">
+          <p class="text-sm font-medium text-gray-600">Submission Endpoint</p>
+          <div class="flex items-center space-x-3">
+            <span class="px-3 py-1 bg-green-500 text-white font-bold rounded-md text-sm">POST</span>
+            <code class="text-xl font-mono text-green-700 break-all">/api/form/add</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schema Section -->
+    <section>
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7s3.582-4 8-4s8 4 8 4M4 7v10" />
+        </svg>
+        Request Body Schema
+      </h2>
+      <p class="text-gray-600 mb-6">
+        The request body must be sent as `application/json` and adhere to the
+        following structure:
+      </p>
+
+      <div class="overflow-x-auto rounded-lg shadow-xl">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Field
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Type
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Required
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Constraints
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200 text-sm">
+            <!-- Row: platform -->
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">supplierToken</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="required-tag">NO</span></td>
+              <td class="px-6 py-4 text-gray-500">N/A</td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">platform</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="required-tag">Yes</span></td>
+              <td class="px-6 py-4 text-gray-500">N/A</td>
+            </tr>
+
+            <!-- Row: platformEmail (New Field) -->
+            <tr class="hover:bg-gray-50 bg-yellow-50">
+              <td class="px-6 py-4 font-semibold">platformEmail</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="required-tag">Yes</span></td>
+              <td class="px-6 py-4 text-gray-500">N/A</td>
+            </tr>
+
+            <!-- Row: name -->
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">name</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="required-tag">Yes</span></td>
+              <td class="px-6 py-4 text-gray-500">N/A</td>
+            </tr>
+
+            <!-- Row: phone -->
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">phone</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="required-tag">Yes</span></td>
+              <td class="px-6 py-4 text-orange-600">Min 10, Max 15</td>
+            </tr>
+
+            <!-- Row: email -->
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">email</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="required-tag">Yes</span></td>
+              <td class="px-6 py-4 text-gray-500">Valid email format</td>
+            </tr>
+
+            <!-- Row: place -->
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">place</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="required-tag">Yes</span></td>
+              <td class="px-6 py-4 text-gray-500">N/A</td>
+            </tr>
+
+
+            <tr class="hover:bg-gray-50 bg-green-50">
+              <td class="px-6 py-4 font-semibold">priceRange</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="optional-tag">No</span></td>
+              <td class="px-6 py-4 text-gray-500">
+                Example: 1-5cr, 5-10cr, 10cr+
+              </td>
+            </tr>
+
+            <!-- Row: message -->
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">message</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="required-tag">Yes</span></td>
+              <td class="px-6 py-4 text-gray-500">N/A</td>
+            </tr>
+
+            <!-- Row: product (Optional) -->
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">product</td>
+              <td class="px-6 py-4 text-gray-500">String</td>
+              <td class="px-6 py-4"><span class="optional-tag">No</span></td>
+              <td class="px-6 py-4 text-gray-500">
+                Optional product identifier
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Example JSON -->
+    <section class="mt-10">
+      <h3 class="text-xl font-semibold text-gray-700 mb-3">
+        Example Request Body
+      </h3>
+      <div class="code-block">
+        <pre>
+{
+    "supplierToken": "9999999999",
+    "platform": "Website Contact Page",
+    "platformEmail": "sales@promozionebranding.com",
+    "name": "Arjun Patel",
+    "phone": "9898989898",
+    "email": "arjun.patel@client.in",
+    "product": "Social Media Management",
+    "place": "Mumbai, India",
+    "message": "We need help scaling our organic reach across Instagram and LinkedIn."
+}</pre>
+      </div>
+    </section>
+
+    <footer class="mt-10 pt-4 border-t text-center text-sm text-gray-400">
+      Last Updated: Nov 2025 (Timestamps automatically added by Mongoose)
+    </footer>
+  </div>
+</body>
+
+</html>
